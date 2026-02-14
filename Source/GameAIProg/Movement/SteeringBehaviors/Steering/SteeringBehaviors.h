@@ -3,6 +3,8 @@
 #include <Movement/SteeringBehaviors/SteeringHelpers.h>
 #include "Kismet/KismetMathLibrary.h"
 
+
+
 class ASteeringAgent;
 
 // SteeringBehavior base, all steering behaviors should derive from this.
@@ -23,6 +25,28 @@ public:
 
 protected:
 	FTargetData Target;
+	
+private:
+	void DrawDebugLines();
+	
 };
 
 // Your own SteeringBehaviors should follow here...
+
+class Seek: public ISteeringBehavior
+{
+public:
+	Seek() = default;
+	virtual ~Seek() override = default;
+//steering
+	virtual SteeringOutput CalculateSteering(float DeltaT, ASteeringAgent& Agent) override;
+};
+
+class Flee: public ISteeringBehavior
+{
+public:
+	Flee() = default;
+	virtual ~Flee() override = default;
+//steering
+	virtual SteeringOutput CalculateSteering(float DeltaT, ASteeringAgent& Agent) override;
+};
