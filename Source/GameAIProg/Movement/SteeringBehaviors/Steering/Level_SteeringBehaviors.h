@@ -47,7 +47,7 @@ private:
 	{
 		ASteeringAgent* Agent{nullptr};
 		std::unique_ptr<ISteeringBehavior> Behavior{nullptr};
-		int SelectedBehavior{static_cast<int>(BehaviorTypes::Seek)};
+		int SelectedBehavior{static_cast<int>(BehaviorTypes::Flee)};
 		int SelectedTarget = -1;
 	};
 	

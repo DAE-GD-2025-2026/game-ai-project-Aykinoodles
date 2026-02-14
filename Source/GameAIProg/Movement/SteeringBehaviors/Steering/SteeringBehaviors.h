@@ -25,9 +25,7 @@ public:
 
 protected:
 	FTargetData Target;
-	
-private:
-	void DrawDebugLines();
+	void DrawDebugLines(ASteeringAgent & Agent, const SteeringOutput& steering)const;
 	
 };
 
